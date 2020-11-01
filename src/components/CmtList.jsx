@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CmtItem from './CmtItem';
 import css from '../css/cmtlist.scss';
+import bootcss  from 'bootstrap/dist/css/bootstrap.css';
 
 console.log(css);
 
@@ -22,6 +23,7 @@ class CmtList extends Component {
         return (
             <div>
                 <h2 className={css.title}>评论列表：</h2>
+                <button>按钮</button>
                 {this.state.CommentList.map(item => <CmtItem {...item} key={item.id} />)}
             </div>
         )
