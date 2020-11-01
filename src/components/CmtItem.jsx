@@ -1,7 +1,7 @@
 import React from 'react';
 import css from '../css/cmtitem.scss';
 
-console.log(css);
+// console.log(css);
 
 const CmtItem = (props) => {
     return (
