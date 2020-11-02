@@ -5,7 +5,8 @@ export default class BindEvent extends Component {
         super(props);
         this.state = {
             date: "这里的之前的内容",
-            msg: "这里可能是文本框里的字"
+            msg: "这里可能是文本框里的字",
+            value: ''
         }
     }
 
@@ -15,7 +16,16 @@ export default class BindEvent extends Component {
             msg: "点了按钮"
         })
     }
-    onChange = (value) => console.log('onChange事件触发:' + value);
+
+    onChange = (e) => {
+        // console.log(e);
+        if (e.target.value === 'abc') {
+            alert('!')
+        }
+        this.setState({
+            value: e.target.value
+        });
+    };
 
     render() {
         return (
@@ -24,10 +34,11 @@ export default class BindEvent extends Component {
                 {this.state.date}<br />
                 <input
                     type="text"
-                    value={this.state.msg}
+                    value={this.state.value}
+                    placeholder="placeholder"
                     style={{ width: '250px' }}
                     // readOnly
-                    onChange={this.onChange()}
+                    onChange={this.onChange}
                 />
             </div>
         )
