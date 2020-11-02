@@ -22,6 +22,7 @@ class CmtList extends Component {
             <div>
                 <h2 className={css.title}>评论列表：</h2>
                 <button className="btn btn-primary">按钮</button>
+                <div className="panel panel-primary"></div>
                 {this.state.CommentList.map(item => <CmtItem {...item} key={item.id} />)}
             </div>
         )
